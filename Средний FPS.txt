@@ -1,0 +1,25 @@
+        
+        self.frame_count = 0
+        self.time_accumulator = 0.0
+        self.fps = 0
+        
+        # Запускаем задачу для обновления FPS
+        self.taskMgr.add(self.update_fps_task, "UpdateFPS")
+
+    def update_fps_task(self, task):
+        # Получаем время, прошедшее с прошлого кадра (dt)
+        dt = globalClock.getDt()
+        
+        self.frame_count += 1
+        self.time_accumulator += dt
+        
+        # Усредняем каждую 1 секунду (или каждые 60 кадров)
+        if self.time_accumulator >= 1.0:
+            self.fps = self.frame_count / self.time_accumulator
+            print(f"FPS: {self.fps:.2f}")
+            
+            # Сбрасываем счетчики
+            self.frame_count = 0
+            self.time_accumulator = 0.0
+            
+        return task.cont

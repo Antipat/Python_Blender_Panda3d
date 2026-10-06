@@ -6,3 +6,5 @@
 
  По ссылке ниже можно скачать ресурсы для разработки игры и приложения из книги:
 https://drive.google.com/drive/folders/1SKfkbCBKDGUImuAfKMI7A7OG9q9yLdSX?usp=drive_link 
+
+В папке moduls собраны готовые модели для игрового проекта из книги
